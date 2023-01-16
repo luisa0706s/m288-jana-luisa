@@ -5,7 +5,7 @@
         <title>Währungsrechner</title>
         <link rel="stylesheet" href="../CSS/stylesheet.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- FontAweome CDN Link for Icons -->
+        <!-- FontAwesome CDN Link für Exchange Icon -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     </head>
     <body>
@@ -18,52 +18,46 @@
                 <p>
                     Betrag eingeben
                 </p>
-                <input type="text" value="1">
+                <label>
+                    <input type="text" value="1">
+                </label>
             </div>
             <div class="drop-list">
-                <div class="Von">
+                <div class="from">
                     <p>Von</p>
                     <div class="select-box">
-                        <img src="https://flagcdn.com/16x12/us.png" alt="Flagge">
-                        <select></select>
+                            <select>
+                                <option value="CHF">🇨🇭&emsp;CHF</option>
+                                <option value="EUR">🇩🇪&emsp;EUR</option>
+                                <option value="USD">🇺🇸&emsp;USD</option>
+                            </select>
                     </div>
                 </div>
 
                 <div class="icon"><i class="fas fa-exchange-alt"></i></div>
 
-                <div class="Zu">
+                <div class="to">
                     <p>Zu</p>
                     <div class="select-box">
-                        <img src="https://flagcdn.com/16x12/us.png" alt="Flagge">
-                        <select></select>
+                        <select>
+                            <option value="CHF">🇨🇭&emsp;CHF</option>
+                            <option value="EUR">🇩🇪&emsp;EUR</option>
+                            <option value="USD">🇺🇸&emsp;USD</option>
+                        </select>
                     </div>
                 </div>
             </div>
 
             <!--Wechselkurs-->
-                <div class="exchange-rate">1 USD = 0.93 CHF</div>
+                <div class="exchange-rate">Berechne Devisenkurs...</div>
             <button>Devisenkurs abrufen</button>
 
 
         </form>
         </div>
 
-    <script src="js/laenderliste.js"></script>
-        <script src="js/script.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <script src="../js/laenderliste.js"></script>
+        <script src="../js/script.js"></script>
 
 
 
