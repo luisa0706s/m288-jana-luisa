@@ -16,8 +16,8 @@ button.addEventListener("click", e => {
 const icon = document.querySelector("form .icon");
 icon.addEventListener("click", ()=>{
     let tempCode = initialCurrency.value;
-    afterCurrency.value = tempCode;
     initialCurrency.value = afterCurrency.value;
+    afterCurrency.value = tempCode;
     getExchangeRateFromApi();
 })
 

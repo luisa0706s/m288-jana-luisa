@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Raleway', 'sans-serif' ;
+
 }
 
 body {
@@ -40,6 +41,7 @@ form :where(input, select, button){
 form p{
     font-size: 18px;
     margin-bottom: 5px;
+
 }
 
  form input{
@@ -47,6 +49,8 @@ form p{
      height: 50px;
      padding: 0 15px;
      font-size: 17px;
+     color: #000;
+
  }
 
  form .drop-list{
@@ -96,15 +100,20 @@ form p{
      margin-top: 30px;
  }
 
+ .fa-exchange-alt{
+     color: #5BACBD;
+ }
+
  form .exchange-rate{
-     font-size: 17px;
+     font-size: 20px;
      margin: 20px 0 30px;
  }
 
  form button {
      height: 52px;
      color: white;
-     font-size: 17px;
+     font-size: 20px;
+     font-weight: 500;
      cursor: pointer;
      background: #ADD9D4;
  }
