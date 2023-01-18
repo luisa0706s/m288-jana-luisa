@@ -1,4 +1,5 @@
-let laender_code = {
+//JavaScript Objekt von Länderliste
+let laenderliste = {
     "CHF" : "CH",
     "EUR" : "FR",
     "USD" : "US",

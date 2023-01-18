@@ -1,46 +1,42 @@
-const dropList = document.querySelectorAll("form select"),
-    fromCurrency = document.querySelector(".from select"),
-    toCurrency = document.querySelector(".to select"),
-    getButton = document.querySelector("form button");
-// Optionen Tag erstellen für Währungen
-for (let i = 0; i < dropList.length; i++) {
-    for(let currency_code in country_list){
-        let selected = i == 0 ? currency_code == "CHF" ? "selected" : "" : currency_code == "EUR" ? "selected" : "";
-        let optionTag = `<option value="${currency_code}" ${selected}>${currency_code}</option>`;
-        dropList[i].insertAdjacentHTML("beforeend", optionTag);
-    }
-}
+//HTML Objekte werden in JavaScript initialisiert
+    initialCurrency = document.querySelector(".from select"),
+    afterCurrency = document.querySelector(".to select"),
+    button = document.querySelector("form button");
 
-
+//EventListener wird auf den Button und das Window gesetzt
 window.addEventListener("load", () =>{
-   getExchangeRate();
+    getExchangeRateFromApi();
 });
-getButton.addEventListener("click", e => {
+button.addEventListener("click", e => {
     e.preventDefault();
-    getExchangeRate();
+    getExchangeRateFromApi();
 });
 
-const exchangeIcon = document.querySelector("form .icon");
-exchangeIcon.addEventListener("click", ()=>{
-    let tempCode = fromCurrency.value;
-    fromCurrency.value = toCurrency.value;
-    toCurrency.value = tempCode;
-    getExchangeRate();
+//Icon werden geholt und auf Klick wird die Währung umgewechselt und gerechnet
+const icon = document.querySelector("form .icon");
+icon.addEventListener("click", ()=>{
+    let tempCode = initialCurrency.value;
+    afterCurrency.value = tempCode;
+    initialCurrency.value = afterCurrency.value;
+    getExchangeRateFromApi();
 })
 
-function getExchangeRate(){
-    const amount = document.querySelector("form input");
+//Zuerst werden die Ausgewählten Währungen aus dem DOM hinausgelesen und dann werden sie validiert.
+//Dannach wird ein fetch auf die Untergelegene URL geamcht wenn dies fertig ist wird es in JSON umgewandelt.
+//und wenn dies auch fertig ist, wird der Exchangerate aus den gefetchten Daten hinausgelesen und damit den neue Wert ausgerechnet.
+function getExchangeRateFromApi(){
     const exchangeRateTxt = document.querySelector("form .exchange-rate");
+    const amount = document.querySelector("form input");
     let amountVal = amount.value;
     if(amountVal == "" || amountVal == "0"){
         amount.value = "1";
         amountVal = 1;
     }
     exchangeRateTxt.innerText = "Berechne Devisenkurs...";
-    let url = "https://v6.exchangerate-api.com/v6/5f37d6d73350eae3a5b6376d/latest/${fromCurrency.value}";
+    let url = "https://v6.exchangerate-api.com/v6/a1707610938339cde017aa42/latest/" + initialCurrency.value;
     fetch(url).then(response => response.json()).then(result =>{
-        let exchangeRate = result.conversion_rates[toCurrency.value];
-        let totalExRate = (amountVal * exchangeRate).toFixed(2);
-        exchangeRateTxt.innerText = "${amountVal} ${fromCurrency.value} = ${totalExRate} ${toCurrency.value}";
+        let exchangeRate = result.conversion_rates[afterCurrency.value];
+        let totalExchangeRate = (amountVal * exchangeRate).toFixed(2);
+        exchangeRateTxt.innerText = amountVal + " " + initialCurrency.value + " = " + totalExchangeRate + " " + afterCurrency.value;
     });
 }
