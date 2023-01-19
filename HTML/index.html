@@ -1,66 +1,66 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="utf-8">
-        <title>Währungsrechner</title>
-        <link rel="stylesheet" href="../CSS/stylesheet.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- FontAwesome verlinkt -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    </head>
-    <body>
-        <div class="wrapper">
-           <header>
-                Währungsrechner
-            </header>
-        <form action="#">
-            <div class="amount">
-                <p>
-                    Betrag eingeben
-                </p>
-                <label>
-                    <input type="text" value="1">
-                </label>
-            </div>
-            <!--Dropdown Menü einfügen-->
-            <div class="drop-list">
-                <div class="from">
-                    <p>Von</p>
-                    <div class="select-box">
-                            <select>
-                                <option value="CHF">🇨🇭&thinsp;CHF</option>
-                                <option value="EUR">🇩🇪&thinsp;EUR</option>
-                                <option value="USD">🇺🇸&thinsp;USD</option>
-                            </select>
-                    </div>
-                </div>
-
-                <div class="icon"><i class="fas fa-exchange-alt"></i></div>
-
-                <div class="to">
-                    <p>Zu</p>
-                    <div class="select-box">
-                        <select>
-                            <option value="CHF">🇨🇭&thinsp;CHF</option>
-                            <option value="EUR">🇩🇪&thinsp;EUR</option>
-                            <option value="USD">🇺🇸&thinsp;USD</option>
-                        </select>
-                    </div>
+<head>
+    <meta charset="utf-8">
+    <title>Währungsrechner</title>
+    <link rel="stylesheet" href="../CSS/stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FontAwesome verlinkt -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        Währungsrechner
+    </header>
+    <form action="#">
+        <div class="amount">
+            <p>
+                Betrag eingeben
+            </p>
+            <label>
+                <input type="text" value="1">
+            </label>
+        </div>
+        <!--Dropdown Menü einfügen-->
+        <div class="drop-list">
+            <div class="from">
+                <p>Von</p>
+                <div class="select-box">
+                    <select>
+                        <option value="CHF" id="chf1"></option>
+                        <option value="EUR" id="eur1"></option>
+                        <option value="USD" id="usd1"></option>
+                    </select>
                 </div>
             </div>
 
-            <!--Wechselkurs-->
-                <div class="exchange-rate">Berechne Devisenkurs...</div>
-            <button>Devisenkurs abrufen</button>
+            <div class="icon"><i class="fas fa-exchange-alt"></i></div>
 
-
-        </form>
+            <div class="to">
+                <p>Zu</p>
+                <div class="select-box">
+                    <select>
+                        <option value="CHF" id="chf2"></option>
+                        <option value="EUR" id="eur2"></option>
+                        <option value="USD" id="usd2"></option>
+                    </select>
+                </div>
+            </div>
         </div>
 
-    <script src="../js/laenderliste.js"></script>
-        <script src="../js/script.js"></script>
+        <!--Wechselkurs-->
+        <div class="exchange-rate">Berechne Devisenkurs...</div>
+        <button>Devisenkurs abrufen</button>
+
+
+    </form>
+</div>
+
+<script src="../js/laenderliste.js"></script>
+<script src="../js/script.js"></script>
 
 
 
-    </body>
+</body>
 </html>
