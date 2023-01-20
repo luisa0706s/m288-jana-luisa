@@ -1,5 +1,16 @@
+//Konstanten aus Objekten ansprechen und einsetzen
+document.getElementById("chf1").innerHTML = franken;
+document.getElementById("eur1").innerHTML = euro;
+document.getElementById("usd1").innerHTML = dollar;
+
+document.getElementById("chf2").innerHTML = franken;
+document.getElementById("eur2").innerHTML = euro;
+document.getElementById("usd2").innerHTML = dollar;
+
+
+
 //HTML Objekte werden in JavaScript initialisiert
-    initialCurrency = document.querySelector(".from select"),
+initialCurrency = document.querySelector(".from select"),
     afterCurrency = document.querySelector(".to select"),
     button = document.querySelector("form button");
 
@@ -13,7 +24,7 @@ button.addEventListener("click", e => {
 });
 
 //Icon werden geholt und auf Klick wird die Währung umgewechselt und gerechnet
-const icon = document.querySelector("form .icon");
+const icon = document.querySelector(".fa-exchange-alt");
 icon.addEventListener("click", ()=>{
     let tempCode = initialCurrency.value;
     initialCurrency.value = afterCurrency.value;
